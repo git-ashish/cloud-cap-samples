@@ -5,6 +5,10 @@ const { Books } = cds.entities
 module.exports = cds.service.impl(function() {
   this.after ('READ', 'Books', each => each.stock > 111 && _addDiscount2(each,11))
   this.before ('CREATE', 'Orders', _reduceStock)
+
+  this.on('getGreeting', function(req){
+    return 'Hello CAP World'
+  })
 })
 
 /** Add some discount for overstocked books */

@@ -15,10 +15,10 @@
   },
   "cds": {
     "requires": {
-      "db-inmem": {
+      "db": {
         "kind": "sql"
       },
-      "db": {
+      "db-p": {
         "kind": "sqlite",
         "__model": "db/schema.cds",
         "model": ["db", "srv"],
